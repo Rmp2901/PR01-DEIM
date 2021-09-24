@@ -5,28 +5,22 @@ using UnityEngine;
 public class Bucles : MonoBehaviour
 {
 
-    public int num1;
+    int num1;
+    int recuento;
 
     // Start is called before the first frame update
     void Start()
     {
-        while (num1 <= 15)
+        recuento = 0; 
+        while (num1 != 5) //valor que intentaremos conseguir de forma aleatoria
         {
-            if (num1 < 15)
-            {
-                print("El valor es menor que 15");
-            }
-            else if (num1 >=3 && num1 <= 15)
-            {
-                print("El valor es" + num1);
-            }
-            else
-            {
-                print("El valor es 15");
-            }
+            num1 = Random.Range(1, 51); //Generador de valores
 
-            num1++;
+            Debug.Log("Ha salido el valor: " + num1); // Dice que valor hemos obtenido
+            recuento++;
         }
+
+        Debug.Log("Se termino, han salido un total de: " + recuento + " valores");
 
     }
 
