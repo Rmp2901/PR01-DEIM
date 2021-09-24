@@ -8,6 +8,7 @@ public class Counter : MonoBehaviour
     [SerializeField] Text MyText;
     [SerializeField] float speed;
     int n;
+    bool contadorEncendido;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,18 @@ public class Counter : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire3"))
         {
-            StartCoroutine("Cronometro");
-        }
-        if (Input.GetButtonUp("Fire3"))
-        {
-            StopCoroutine("Cronometro");
+            if (contadorEncendido == false)
+            {
+                StartCoroutine("Cronometro");
+                contadorEncendido = true;
+            }
+    
+
+            else
+            {
+                StopCoroutine("Cronometro");
+                contadorEncendido = false;
+            }
         }
     }
 
@@ -36,10 +44,7 @@ public class Counter : MonoBehaviour
             yield return new WaitForSeconds(speed);
             
         }
-        
-            
-                
-        
+     
         
 
     }
