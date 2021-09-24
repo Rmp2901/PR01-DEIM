@@ -15,5 +15,7 @@ public class Interactivity : MonoBehaviour
         float desplX = Input.GetAxis("Horizontal") * speed;
         transform.Translate(Vector3.left * desplX * Time.deltaTime);
 
+        float desplZ = Input.GetAxis("ProfundidadAdelante") * speed;
+        transform.Translate(Vector3.forward * desplZ * Time.deltaTime);
     }
 }
