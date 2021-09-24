@@ -10,15 +10,18 @@ public class Bucles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        while (num1 < 15)
+        {
+            num1++;
+        }
+        print (num1);
+
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        if(num1 < 10)
-        {
-            num1++;
-        }
+        
     }
 }
